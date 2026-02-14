@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-Mz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loja online_inhhamizua</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: arial, verdana, segoe uI;
+    }
+    
+    :root {
+      --primary: #F57C00;
+      --primary-hover: #E65100;
+      --primary-light: #FFE0B2;
+      --text-main: #333333;
+    }
+    
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+    }
+    
+    h1 {
+      font-size: 1.7em;
+      text-align: center;
+      margin-bottom: 15px;
+      color: var(--primary-hover);
+    }
+    
+    .myForm {
+      padding: 15px;
+      width: 100%;
+    }
+    
+    .myForm div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .myForm input {
+      width: calc(100% - 65px);
+      padding: 8px;
+      margin: 10px 0px;
+      border-radius: 4px;
+      border: 1px solid var(--primary-light);
+      outline: none;
+    }
+    
+    label {
+      font-weight: 500;
+    }
+    
+    .myForm select {
+      width: calc(100% - 145px);
+      margin: 10px 0px;
+      padding: 5px;
+      text-align: center;
+      border-radius: 4px;
+      border: 1px solid var(--primary-light);
+      outline: none;
+      cursor: pointer;
+      font-size: .89em;
+    }
+    
+    .myForm button {
+      width: 100%;
+      margin: 5px 0px;
+      padding: 8px;
+      border: none;
+      outline: none;
+      background: var(--primary);
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .3s ease-in-out;
+    }
+    
+    .myForm button:hover {
+      background: var(--primary-hover);
+    }
+    
+    .myForm p {
+      text-align: center;
+      margin-top: 5px;
+      color: var(--text-main);
+    }
+    
+    .myForm p a {
+      padding: 5px;
+      text-decoration: none;
+      color: var(--primary-hover);
+    }
+    
+    .myForm p a:hover {
+      text-decoration: underline;
+    }
+    
+    #aS {
+      text-decoration: underline;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    @media screen and (min-width: 768px) {
+      
+      #container-criarConta,
+      #container-login {
+        max-width: 550px;
+      }
+      
+      .myForm input {
+        width: calc(100% - 55px);
+      }
+      
+      .myForm select {
+        width: calc(100% - 120px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container-criarConta">
+    <form class="myForm" method="post" accept-charset="utf-8">
+      <h1>Cadastre-se aqui</h1>
+      <div id="div-name">
+        <label for="name">Nome</label>
+        <input type="text" required placeholder="Seu nome completo " minlength="3">
+      </div>
+      
+      <div>
+        <label for="email">E-mail</label>
+        <input type="email" placeholder="Seu email ex:beto@gmail.com" required>
+      </div>
+      
+      <div>
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" required placeholder="Sua senha">
+      </div>
+      
+      <div>
+        <label for="genero">Tipo de cliente</label>
+        <select id="client">
+          <option value="client" disabled selected>------Selecione uma opção------</option>
+          <option value="Vendedor">Vendedor </option>
+          <option value="Comprador">Comprador </option>
+        </select>
+        
+      </div>
+      
+      <button type="submit">Cadastrar</button>
+      <p>Já tenho uma conta<a href="#sigIn" id="sigUp">Fazer login </a></p>
+    </form>
+  </div>
+  
+  <div id="container-login" class="hidden">
+    <form class="myForm" method="POST" accept-charset="utf-8">
+      <h1>Faça seu login</h1>
+      <div>
+        <label for="emal">E-mail</label>
+        <input type="email" required placeholder="Digite seu email " />
+      </div>
+      
+      <div>
+        <label for="senha">Senha</label>
+        <input placeholder="Digite sua senha" type="password" required>
+      </div>
+      <button type="submit">Entrar</button>
+      <p>Não tenho uma conta<a id="sigIn" href="#sigUp">Criar conta</a></p>
+      <p><a href="#" id="aS">Esqueci a senha</a></p>
+    </form>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+
+</html>
